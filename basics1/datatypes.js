@@ -14,7 +14,9 @@
    
 
   type of null is object and undefined is undefined
+  
 
+  converting null to number gives 0, but undefined gives NaN and also string gives NaN, Conversion of  boolean gives 1 for true and 0 for false and object gives NaN
   
 
 */
