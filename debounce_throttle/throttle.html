@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Count <span id="count">0</span></h2>
+    <input type="text" name="text" />
+
+    <script>
+      const count = document.getElementById("count");
+      document.addEventListener("mousemove", function (e) {
+        updateNumber();
+      });
+
+      const input = document.querySelector("input");
+      input.addEventListener(
+        "input",
+        throttle((e) => {
+          console.log(e.target.value);
+        }, 2000)
+      );
+
+      const updateNumber = throttle(() => {
+        count.innerText = ++count.innerText;
+      }, 500);
+
+      function throttle(callback, delay) {
+        let firstCall = true;
+        let timerId = null;
+        let lastArgs = [];
+        return function (...args) {
+          lastArgs = args;
+          if (firstCall) {
+            callback.apply(this, lastArgs);
+            firstCall = false;
+            return;
+          }
+
+          if (timerId) {
+            return;
+          }
+          timerId = setTimeout(() => {
+            timerId = null;
+            callback.apply(this, lastArgs);
+          }, delay);
+        };
+      }
+    </script>
+  </body>
+</html>
