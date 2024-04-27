@@ -48,3 +48,33 @@ console.log(addTwo(3, 4));
 // const myArray = [2, 5, 3, 7, 8]
 
 // myArray.forEach()
+
+this.a = { name: "hello" };
+
+const obj = {
+  name: "bare",
+  getName: function () {
+    const nested = () => {
+      console.log(this);
+    };
+    nested();
+  },
+};
+
+const calc = {
+  total: 0,
+  add(num) {
+    this.total += num;
+    return this;
+  },
+  multiply(num) {
+    this.total *= num;
+    return this;
+  },
+  subtract(num) {
+    this.total -= num;
+    return this;
+  },
+};
+const re = calc.add(10).multiply(5).subtract(30).add(30);
+console.log(re.total);
