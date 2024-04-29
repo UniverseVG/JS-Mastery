@@ -1,19 +1,14 @@
-function getYourMemoizedFunction() {
-  const cache = {};
-  function doHeavyCalculation(x) {
-    if (cache[x]) return cache[x];
-    const startTime = Date.now();
-    let currentTime = startTime;
-    while (startTime + 500 > currentTime) {
-      currentTime = Date.now();
-      console.log("Calculating...", currentTime - startTime);
-    }
-    const result = +Math.sqrt(x).toFixed(3);
+const obj = { name: "Version 1", additionalInfo: { version: 1 } };
 
-    cache[x] = result;
-    return result;
-  }
-  return doHeavyCalculation;
-}
+const shallowCopy1 = { ...obj };
+const shallowCopy2 = Object.assign({}, obj);
 
-const memoizedDoHeavyCalculation = getYourMemoizedFunction();
+shallowCopy1.name = "Version 2";
+shallowCopy1.additionalInfo.version = 2;
+
+shallowCopy2.name = "Version 2";
+shallowCopy2.additionalInfo.version = 2;
+
+console.log(obj); // { name: 'Version 1', additionalInfo: { version: 2 } }
+console.log(shallowCopy1); // { name: 'Version 2', additionalInfo: { version: 2 } }
+console.log(shallowCopy2);
