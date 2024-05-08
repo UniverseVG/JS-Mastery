@@ -141,13 +141,91 @@
 // ) {
 //   console.log(i);
 // }
-const clockArea = document.querySelector("#app");
-const now = new Date();
-console.log(now.getHours().toString().padStart(0, 2), now.getMinutes().toString().padStart(0, 2));
+// const clockArea = document.querySelector("#app");
+// const now = new Date();
+// console.log(
+//   now.getHours().toString().padStart(0, 2),
+//   now.getMinutes().toString().padStart(0, 2)
+// );
 
-function clock() {
-  clockArea.innerHTML = new Date().toTimeString().split(" ")[0];
-}
-setInterval(clock, 1000);
+// function clock() {
+//   const now = new Date();
+//   let amOrPm = "";
+//   let hours = now.getHours();
+//   if (hours > 12) {
+//     amOrPm = "PM";
+//   } else {
+//     amOrPm = "AM";
+//   }
+//   clockArea.innerHTML =
+//     (now.getHours() > 12 ? now.getHours() - 12 : now.getHours())
+//       .toString()
+//       .padStart(2, "0") +
+//     ":" +
+//     now.getMinutes().toString().padStart(2, "0") +
+//     ":" +
+//     now.getSeconds().toString().padStart(2, "0") +
+//     " " +
+//     amOrPm;
 
-console.log(clockArea);
+//   requestAnimationFrame(clock);
+// }
+// requestAnimationFrame(clock);
+
+// console.log(clockArea);
+
+// console.log("start");
+
+// ["a", "b"].forEach((item) => console.log(item));
+
+// console.log("end");
+
+// const input = [
+//   {
+//     key: "Sample 1",
+//     data: "Data 1",
+//   },
+
+//   {
+//     key: "Sample 1",
+//     data: "Data 1",
+//   },
+//   {
+//     key: "Sample 1",
+//     data: "Data 1",
+//   },
+//   {
+//     key: "Sample 2",
+//     data: "Data 1",
+//   },
+//   {
+//     key: "Sample 3",
+//     data: "Data 1",
+//   },
+//   {
+//     key: "Sample 4",
+//     data: "Data 1",
+//   },
+//   {
+//     key: "Sample 4",
+//     data: "Data 3",
+//   },
+// ];
+
+// const obj = input.reduce((acc, cu) => {
+//   acc[cu.key] = acc[cu.key] || [];
+//   if (acc[cu.key]) {
+//     acc[cu.key].push(cu);
+//   }
+//   return acc;
+// }, {});
+
+// const obj = {};
+// for (let item of input) {
+//   if (obj[item.key]) {
+//     obj[item.key].push(item);
+//   } else {
+//     obj[item.key] = [item];
+//   }
+// }
+// console.log(obj);
