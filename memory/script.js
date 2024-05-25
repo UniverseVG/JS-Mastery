@@ -229,3 +229,56 @@
 //   }
 // }
 // console.log(obj);
+
+// const add = (a, b) => {
+//   const startTime = Date.now();
+//   let currentTime = startTime;
+//   while (startTime + 500 > currentTime) {
+//     currentTime = Date.now();
+//   }
+//   return a + b;
+// };
+
+// const memoize = (func, context) => {
+//   let res = {};
+//   return function (...args) {
+//     var param = JSON.stringify(args);
+//     console.log(param, res[param]);
+//     if (!res[param]) {
+//       res[param] = func.call(context || this, ...args);
+//       console.log(res[param]);
+//     }
+//     return res[param];
+//   };
+// };
+
+// const memoizeAddFunc = memoize(add, this);
+// console.time("First call");
+// console.log(memoizeAddFunc(2, 1));
+// console.timeEnd("First call");
+// console.time("second call");
+
+// console.log(memoizeAddFunc(2, 1));
+// console.timeEnd("second call");
+
+// function computeAmount() {
+//   totalAmount = 0;
+//   function lacs(arg) {
+//     totalAmount += arg * 100000;
+//     return this;
+//   }
+//   function crores(arg) {
+//     totalAmount += arg * 10000000;
+//     return this;
+//   }
+
+//   function value() {
+//     return totalAmount;
+//   }
+
+//   return {
+//     lacs,
+//     crores,
+//     value,
+//   };
+// }

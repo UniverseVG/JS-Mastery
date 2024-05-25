@@ -43,3 +43,28 @@ function getYourMemoizedFunction() {
 }
 
 const memoizedDoHeavyCalculation = getYourMemoizedFunction();
+
+// function memoize(func, context) {
+//   let cache = {};
+//   return function (...args) {
+//     let key = JSON.stringify(args);
+//     if (!cache[key]) {
+//       cache[key] = func.call(context || this, ...args);
+//     }
+//     return cache[key];
+//   };
+// }
+
+// function multiply(a, b) {
+//   for (let i = 0; i < 100000; i++) {}
+//   return a * b;
+// }
+// const memoizedProduct = memoize(multiply);
+
+// console.time("First call");
+// console.log(memoizedProduct(4, 5));
+// console.timeEnd("First call");
+
+// console.time("Second call");
+// console.log(memoizedProduct(4, 5));
+// console.timeEnd("Second call");
