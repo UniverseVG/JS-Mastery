@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .card {
+        background-color: white;
+        border: 1px solid black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: 150ms;
+      }
+
+      .card.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card">This is the first card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is the last card</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
